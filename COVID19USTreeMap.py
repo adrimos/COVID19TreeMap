@@ -86,8 +86,8 @@ fig.add_trace(go.Treemap(
         colorscale='matter',
         #cmid=0.5
         ),
-    hovertemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s}<br> %{percentParent:,.0%} of state total<extra></extra>',
-    texttemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s} <br> %{percentParent} of state total<br>',
+    hovertemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s}<br> %{percentParent:,.0%} of total<extra></extra>',
+    texttemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s} <br> %{percentParent} of total<br>',
     maxdepth=3,
     meta=df_all_trees['codes']
     ), 1, 1)
