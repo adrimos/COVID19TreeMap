@@ -10,7 +10,7 @@ import plotly as pl
 
 # %%
 # Load the data from the John Hopkins github repo
-df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/04-26-2020.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/04-27-2020.csv')
 
 
 # %%
@@ -94,7 +94,11 @@ fig.add_trace(go.Treemap(
 
 fig.update_layout(
     title='Cumulative confirmed cases per state and county as percentage of total in the US',
+    #title='Cumulative confirmed COVID19 cases per state and county <br> as percentage of total in the US <br> Mar 16, 2020',
     title_x=0.5,
+    #font=dict(size=9),
+    #width=600,
+    #height=800,
     hoverlabel=dict(
             bgcolor="white",
             font_size=16,
@@ -107,5 +111,12 @@ fig.show()
 
 import plotly.io as pio
 pio.write_html(fig, file='Index.html', auto_open=True)
+
+# import os
+
+# if not os.path.exists("images"):
+#     os.mkdir("images")
+
+# fig.write_image("images/03-16-2020.svg")
 
 # %%
