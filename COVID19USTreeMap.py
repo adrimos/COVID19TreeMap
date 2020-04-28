@@ -10,7 +10,7 @@ import plotly as pl
 
 # %%
 # Load the data from the John Hopkins github repo
-df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/04-23-2020.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/04-26-2020.csv')
 
 
 # %%
@@ -86,8 +86,8 @@ fig.add_trace(go.Treemap(
         colorscale='matter',
         #cmid=0.5
         ),
-    hovertemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s}<br> %{percentParent:,.0%} of total<extra></extra>',
-    texttemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s} <br> %{percentParent} of total<br>',
+    hovertemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s}<br> %{percentParent:,.2%} of total<extra></extra>',
+    texttemplate='<b>%{label} </b> <br> Confirmed: %{value:,.2s} <br> %{percentParent:,.2%} of total<br>',
     maxdepth=3,
     meta=df_all_trees['codes']
     ), 1, 1)
