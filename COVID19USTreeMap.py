@@ -10,7 +10,7 @@ import plotly as pl
 
 # %%
 # Load the data from the John Hopkins github repo
-df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/06-28-2020.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/06-29-2020.csv')
 
 
 # %%
@@ -74,6 +74,10 @@ df_all_trees['codes'] = codes['parent']
 
 
 # %%
+import datetime
+today = datetime.date.today()
+yesterday = today - datetime.timedelta(days=1)
+
 fig = make_subplots(1, 1, specs=[[{"type": "domain"}]])
 
 fig.add_trace(go.Treemap(
@@ -93,7 +97,7 @@ fig.add_trace(go.Treemap(
     ), 1, 1)
 
 fig.update_layout(
-    title='Cumulative confirmed cases per state and county as percentage of total in the US',
+    title='Cumulative confirmed cases per state and county as percentage of total in the US <br> Updated: ' + str(yesterday),
     #title='Cumulative confirmed COVID19 cases per state and county <br> as percentage of total in the US <br> Mar 16, 2020',
     title_x=0.5,
     #font=dict(size=9),
